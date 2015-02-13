@@ -41,56 +41,107 @@ $(document).ready(
 			total = num1 / num2;
 		}
 		
-		
-		//this is add
-		$("#calc").click(
+		$("#topleft").click(
 			function(){
+				add();
 				showNumber();
 			}
 		);
 		
-		$("#add").click(
-			function(){
-				add();
-			}
-		);
-		
-		//this is sub
-		$("#sub").click(
+		$("#topright").click(
 			function(){
 				subtract();
+				alert(total);
 			}
 		);
 		
-		//this is multiply
-		$("#mult").click(
+		$("#botleft").click(
 			function(){
 				multiply();
+				alert(total);
 			}
 		);
 		
-		//this is divide
-		$("#divide").click(
+		$("#botright").click(
 			function(){
 				divide();
+				alert(total);
 			}
 		);
+		
+
 	}
 	
 );
 
   </script>
   <style>
-    
+ #topleft {
+	 background: #EB00F9;
+	 position: fixed;
+	 left:0;
+	 top:0;
+	 width:50%;
+	 height:50%;
+ }
+ 
+  #topright {
+	 background: #C44;
+	 position: fixed;
+	 right:0;
+	 top:0;
+	 width:50%;
+	 height:50%;
+ }
+ 
+  #botleft {
+	 background: #00FF21;
+	 position: fixed;
+	 left:0;
+	 bottom:0;
+	 width:50%;
+	 height:50%;
+ }
+ 
+   #botright {
+	 background: #092CF2;
+	 position: fixed;
+	 right:0;
+	 bottom:0;
+	 width:50%;
+	 height:50%;
+ }
+ 
+ #numbers {
+	 position:fixed;
+	 top:40%;
+	 left:30%;
+	 z-index:1;
+ }
+ 
+ #numbers input {
+	 height:40px;
+	 font-size:15pt;
+	 font-family: 'Helvetica';
+	 
+ }
+ 
+ #display {
+ }
   </style>
     <body>
+    <div id="numbers">
     	<input id="num1" type="text" placeholder="the 1st #" />
-        <button id="add">+</button>
-        <button id="sub">-</button>
-        <button id="mult">x</button>
-        <button id="divide">/</button>
         <input id="num2" type="text" placeholder="the 2nd #" />
-        <button id="calc">Calculate</button>
+     </div>
+		<div id="topleft">
+        	<h1>ADD</h1>
+            <div id="display">
+        </div>
+       </div>
+        <div id="topright">SUBTRACT</div>
+        <div id="botleft">MULTIPLY</div>
+        <div id="botright">DIVIDE</div>
 		<div id="display">
         </div>
         
