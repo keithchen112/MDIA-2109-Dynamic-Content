@@ -12,36 +12,46 @@ $(document).ready(
 		var num2 = 0;
 		var total = 0;
 	
-		var add = function(){
+		var showNumber = function(){
+			$("#display").html("<h1>"+total+"</h1>");
+		}
+	
+		var getNumber = function(){
 			num1 = parseInt($("#num1").val());
 			num2 = parseInt($("#num2").val());
+		};
+	
+		var add = function(){
+			getNumber();
 			total = num1 + num2;
 		}
 		
 		var subtract = function(){
-			num1 = parseInt($("#num1").val());
-			num2 = parseInt($("#num2").val());
+			getNumber();
 			total = num1 - num2;
 		}
 		
 		var multiply = function(){
-			num1 = parseInt($("#num1").val());
-			num2 = parseInt($("#num2").val());
+			getNumber();
 			total = num1 * num2;
 		}
 		
 		var divide = function(){
-			num1 = parseInt($("#num1").val());
-			num2 = parseInt($("#num2").val());
+			getNumber();
 			total = num1 / num2;
 		}
 		
 		
 		//this is add
+		$("#calc").click(
+			function(){
+				showNumber();
+			}
+		);
+		
 		$("#add").click(
 			function(){
 				add();
-				$("#display").html("<h1>"+total+"</h1>");
 			}
 		);
 		
@@ -49,7 +59,6 @@ $(document).ready(
 		$("#sub").click(
 			function(){
 				subtract();
-				$("#display").html("<h1>"+total+"</h1>");
 			}
 		);
 		
@@ -57,7 +66,6 @@ $(document).ready(
 		$("#mult").click(
 			function(){
 				multiply();
-				$("#display").html("<h1>"+total+"</h1>");
 			}
 		);
 		
@@ -65,7 +73,6 @@ $(document).ready(
 		$("#divide").click(
 			function(){
 				divide();
-				$("#display").html("<h1>"+total+"</h1>");
 			}
 		);
 	}
